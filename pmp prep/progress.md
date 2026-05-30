@@ -5,6 +5,7 @@
 - 50 Mindset Principles: 50 / 50 → principles_dataset.json
 - 100 Drag-and-Drop: 100 / 100 → dnd_dataset.json
 - 150 PMBOK 7 (David McLachlan): 150 / 150 → pmbok7_dataset.json
+- 110 Drag & Drop (David McLachlan): 111 / 110 (incl. 1 bonus) → dnd2_dataset.json
 
 ## Notes
 - Sources:
@@ -23,6 +24,7 @@
 - quiz.html — 200-question study UI
 - pmbok7.html — 150 PMBOK 7 scenario questions (David McLachlan)
 - principles.html — 50 mindset principles
-- dnd.html — 100 drag-and-drop questions
+- dnd.html — 100 drag-and-drop questions (Andrew Ramdayal)
+- dnd2.html — 110 drag-and-drop questions + bonus (David McLachlan)
 - eco.html — Examination Content Outline
 - exam.html — Pearson VUE-style simulator

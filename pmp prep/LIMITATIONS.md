@@ -60,6 +60,20 @@ Last updated: 2026-05-30.
   validated (every `correct_answer` maps to an existing option; all 150 present). A few answers where
   the instructor was ambiguous reflect the option he leaned toward.
 
+## 5) 110 Drag & Drop — David McLachlan (`dnd2_dataset.json` / `dnd2.html`)
+- Extracted from the spoken transcript ("110 DND by David McLachlan.md", video `wwNUBe21jtM`). There is
+  no source PDF — items, terms, answers and explanations are paraphrased from the narration, grounded
+  only in the transcript. PMBOK / Process Groups / Agile Practice Guide page citations are the ones the
+  instructor read aloud.
+- **111 questions, not 110:** the video ends with an explicit "bonus question 11" (a Myers-Briggs match),
+  so the dataset has the 110 main questions plus that bonus = 111. The page is titled "110 (+1 bonus)".
+- `video_time` is read from the per-line `M:SS` / `H:MM:SS` markers at each question's start (this is a
+  ~2.5-hour video). One timestamp on the scope/quality question was auto-corrected during assembly
+  (a stray value past the outro → its true 2:26:48 start).
+- Each question is 1-to-1 matching (options count = items count), so the engine runs in "consume" mode:
+  a placed chip is removed from the pool. Extracted via 11 parallel passes (one per section), then
+  re-assembled and validated (every item's answer exists in its options; 0 issues).
+
 ## Tooling / process notes
 - During the DnD build, the sandbox intermittently ate/garbled tool stdout, which caused a failed
   silent append and a mis-extraction before they were caught and fixed. If we do another large
