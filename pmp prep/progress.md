@@ -6,6 +6,7 @@
 - 100 Drag-and-Drop: 100 / 100 → dnd_dataset.json
 - 150 PMBOK 7 (David McLachlan): 150 / 150 → pmbok7_dataset.json
 - 110 Drag & Drop (David McLachlan): 111 / 110 (incl. 1 bonus) → dnd2_dataset.json
+- 200 Agile PMP (David McLachlan): 195 distinct (video titled 200) → agile_dataset.json
 
 ## Notes
 - Sources:
@@ -26,5 +27,6 @@
 - principles.html — 50 mindset principles
 - dnd.html — 100 drag-and-drop questions (Andrew Ramdayal)
 - dnd2.html — 110 drag-and-drop questions + bonus (David McLachlan)
+- agile.html — 200 Agile PMP scenario questions (David McLachlan)
 - eco.html — Examination Content Outline
 - exam.html — Pearson VUE-style simulator

@@ -74,6 +74,19 @@ Last updated: 2026-05-30.
   a placed chip is removed from the pool. Extracted via 11 parallel passes (one per section), then
   re-assembled and validated (every item's answer exists in its options; 0 issues).
 
+## 6) 200 Agile PMP — David McLachlan (`agile_dataset.json` / `agile.html`)
+- Extracted from the spoken transcript ("200 AGILE PMP.md", video `tNIHysh2ZW4`). Questions, options,
+  answers and explanations are paraphrased from the narration, grounded only in the transcript.
+- **195 questions, not 200:** the video is titled "200 Agile" but the instructor ends Section 28 after
+  the genuine last question ("we're out of questions, we completed all of these"). After removing 3
+  duplicate re-extractions at a chunk boundary (confirmed identical text/options/timestamps), the set
+  contains **195 distinct questions**, numbered 1–195 with no gaps. The page keeps the "200 Agile" name.
+- `video_time` is read from the per-line `M:SS` / `H:MM:SS` markers (this is a ~6.8-hour video); the
+  full timeline is monotonic after dedup. Extracted via 20 parallel windowed passes, then de-duplicated,
+  re-sorted, renumbered and validated (every answer maps to an option; 0 issues).
+- Some questions reuse a common intro stem (e.g. the Agile Manifesto "in 2001 a group of individuals…")
+  across different sub-questions — these are distinct questions with different options/answers, kept as-is.
+
 ## Tooling / process notes
 - During the DnD build, the sandbox intermittently ate/garbled tool stdout, which caused a failed
   silent append and a mis-extraction before they were caught and fixed. If we do another large
