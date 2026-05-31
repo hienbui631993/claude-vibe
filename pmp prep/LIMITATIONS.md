@@ -97,6 +97,16 @@ Last updated: 2026-05-30.
   approximate to where the instructor begins that topic.
 - Extracted via 8 parallel section passes, then assembled and validated (0 issues).
 
+## 8) PMBOK 7 Body of Knowledge page (`pmbok7guide_dataset.json` / `pmbok7guide.html`)
+- A KNOWLEDGE page (not a quiz), distilled from David McLachlan's PMBOK 7th Edition walkthrough video
+  (`2gmCr40uT4U`). Structure: the 12 Principles, 8 Performance Domains, Tailoring, and Models/Methods/
+  Artifacts — 13 sections / 94 subsections.
+- Bullet points are concise paraphrases of the narration (meaning preserved, not verbatim, not copied
+  from the PMI guide). Each section/subsection `video_time` comes from the per-line `M:SS` markers
+  (minutes run past 59 in this ~61-min video); Watch links jump to that spot.
+- Extracted via 13 parallel section passes, then assembled and validated (0 issues). Reuses the same
+  generic knowledge-page renderer as the Process Groups page.
+
 ## Tooling / process notes
 - During the DnD build, the sandbox intermittently ate/garbled tool stdout, which caused a failed
   silent append and a mis-extraction before they were caught and fixed. If we do another large
