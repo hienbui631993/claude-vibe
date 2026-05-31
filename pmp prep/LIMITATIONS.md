@@ -121,6 +121,16 @@ Last updated: 2026-05-30.
 - Extracted via 8 parallel block passes, assembled, grouped, and validated (40 processes, monotonic
   timestamps, 0 issues).
 
+## 10) 100 Waterfall PMP — David McLachlan (`waterfall_dataset.json` / `waterfall.html`)
+- Extracted from the spoken transcript ("100 Waterfall PMP Questions and Answers.md", video `xIH-u81XCxM`,
+  drawn from PMBOK 6 / predictive). Questions, options, answers and explanations are paraphrased from the
+  narration and grounded only in the transcript.
+- 100 questions, clean 10-per-chapter structure; extracted via 10 parallel passes, assembled and validated
+  (every answer maps to an option; 1–100 with no gaps/dups; 0 issues).
+- `video_time` is read from the per-line `M:SS` markers (this is a long ~4.8-hour video). Two minor
+  timestamp dips at the Q60 and Q71 chapter boundaries are harmless (distinct questions; links still land
+  in the right segment).
+
 ## Tooling / process notes
 - During the DnD build, the sandbox intermittently ate/garbled tool stdout, which caused a failed
   silent append and a mis-extraction before they were caught and fixed. If we do another large

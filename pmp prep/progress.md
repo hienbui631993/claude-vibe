@@ -7,6 +7,7 @@
 - 150 PMBOK 7 (David McLachlan): 150 / 150 → pmbok7_dataset.json
 - 110 Drag & Drop (David McLachlan): 111 / 110 (incl. 1 bonus) → dnd2_dataset.json
 - 200 Agile PMP (David McLachlan): 195 distinct (video titled 200) → agile_dataset.json
+- 100 Waterfall PMP (David McLachlan): 100 / 100 → waterfall_dataset.json
 
 ## Notes
 - Sources:
@@ -28,6 +29,7 @@
 - dnd.html — 100 drag-and-drop questions (Andrew Ramdayal)
 - dnd2.html — 110 drag-and-drop questions + bonus (David McLachlan)
 - agile.html — 200 Agile PMP scenario questions (David McLachlan)
+- waterfall.html — 100 Waterfall PMP scenario questions (David McLachlan)
 - eco.html — Examination Content Outline
 - processgroups.html — Process Groups Practice Guide knowledge page (formerly PMBOK 6, David McLachlan)
 - pmbok7guide.html — PMBOK 7 Body of Knowledge knowledge page (David McLachlan)
