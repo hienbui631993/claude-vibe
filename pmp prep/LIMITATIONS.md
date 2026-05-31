@@ -107,6 +107,20 @@ Last updated: 2026-05-30.
 - Extracted via 13 parallel section passes, then assembled and validated (0 issues). Reuses the same
   generic knowledge-page renderer as the Process Groups page.
 
+## 9) PMBOK 8 — All 40 Processes page (`pmbok8guide_dataset.json` / `pmbok8guide.html`)
+- A KNOWLEDGE page (not a quiz), distilled from David McLachlan's PMBOK 8th Edition walkthrough video
+  (`LcZvGRTJnLo`). PMBOK 8 returns to process groups; the page maps all 40 processes across the 5 groups
+  (Initiating 2, Planning 19, Executing 8, Monitoring & Controlling 10, Closing 1), each with
+  Inputs / Tools & Techniques / Outputs subsections.
+- The 40th process ("Close the Project or Phase") has no standalone heading in the transcript — the
+  instructor transitions inline (~1:12:02); captured correctly so the count is the full 40.
+- Bullets are concise paraphrases of the narration (not verbatim, not copied from the PMI guide). Each
+  process `video_time` comes from the per-line `M:SS`/`H:MM:SS` markers; Watch links jump to that spot.
+- Process titles/group assignments follow the instructor's order; PMBOK 8 is draft/exposure material
+  (the instructor notes it appears in the PMP exam from July 2026), so names may be refined by PMI.
+- Extracted via 8 parallel block passes, assembled, grouped, and validated (40 processes, monotonic
+  timestamps, 0 issues).
+
 ## Tooling / process notes
 - During the DnD build, the sandbox intermittently ate/garbled tool stdout, which caused a failed
   silent append and a mis-extraction before they were caught and fixed. If we do another large
