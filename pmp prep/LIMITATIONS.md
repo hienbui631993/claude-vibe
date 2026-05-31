@@ -87,6 +87,16 @@ Last updated: 2026-05-30.
 - Some questions reuse a common intro stem (e.g. the Agile Manifesto "in 2001 a group of individuals…")
   across different sub-questions — these are distinct questions with different options/answers, kept as-is.
 
+## 7) Process Groups Practice Guide knowledge page (`processgroups_dataset.json` / `processgroups.html`)
+- A KNOWLEDGE page (not a quiz), distilled from David McLachlan's mind-map walkthrough video
+  (`b5X3Z6X56uk`) of the PMI Process Groups Practice Guide (formerly PMBOK 6). 8 sections / 52 subsections.
+- Bullet points are concise paraphrases of the instructor's spoken explanation — meaning preserved,
+  not verbatim, and not copied from the PMI guide itself.
+- Each section and subsection has a `video_time` read from the per-line `M:SS` markers (minutes run
+  past 59 in this ~62-min video); Watch links jump to that spot. Inner subsection timestamps are
+  approximate to where the instructor begins that topic.
+- Extracted via 8 parallel section passes, then assembled and validated (0 issues).
+
 ## Tooling / process notes
 - During the DnD build, the sandbox intermittently ate/garbled tool stdout, which caused a failed
   silent append and a mis-extraction before they were caught and fixed. If we do another large

@@ -29,4 +29,5 @@
 - dnd2.html — 110 drag-and-drop questions + bonus (David McLachlan)
 - agile.html — 200 Agile PMP scenario questions (David McLachlan)
 - eco.html — Examination Content Outline
+- processgroups.html — Process Groups Practice Guide knowledge page (formerly PMBOK 6, David McLachlan)
 - exam.html — Pearson VUE-style simulator
