@@ -34,4 +34,5 @@
 - processgroups.html — Process Groups Practice Guide knowledge page (formerly PMBOK 6, David McLachlan)
 - pmbok7guide.html — PMBOK 7 Body of Knowledge knowledge page (David McLachlan)
 - pmbok8guide.html — PMBOK 8 (all 40 processes) knowledge page (David McLachlan)
+- tools.html — 63 Project Management Tools knowledge page (David McLachlan)
 - exam.html — Pearson VUE-style simulator

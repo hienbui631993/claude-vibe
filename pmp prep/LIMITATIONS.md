@@ -131,6 +131,15 @@ Last updated: 2026-05-30.
   timestamp dips at the Q60 and Q71 chapter boundaries are harmless (distinct questions; links still land
   in the right segment).
 
+## 11) 63 Project Management Tools page (`tools_dataset.json` / `tools.html`)
+- A KNOWLEDGE page (not a quiz), distilled from David McLachlan's "63 Project Management Tools" video
+  (`vi0drXKr7PM`), which walks the tools through an example project (PetBuddy) from initiation to risk.
+- Organised into 11 phase sections; **64 distinct tool entries** are presented (the video is titled "63"
+  — the page keeps that name; the heading count came out at 64, likely a one-off split in the source).
+- Each tool has 2-4 paraphrased bullets and a `video_time` from the per-line `M:SS` markers (Watch links
+  jump to that tool). Tool timeline verified monotonic; extracted via 11 parallel phase passes, validated
+  (0 issues). Bullets are faithful paraphrases, not verbatim PMI text.
+
 ## Tooling / process notes
 - During the DnD build, the sandbox intermittently ate/garbled tool stdout, which caused a failed
   silent append and a mis-extraction before they were caught and fixed. If we do another large
