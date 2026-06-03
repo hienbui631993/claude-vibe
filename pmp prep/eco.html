@@ -83,6 +83,10 @@
   .wbs ul.leaf > li::after { content:'' !important; display:block !important; left:-16px !important; right:auto !important; top:24px !important; width:16px !important; height:0 !important; border:0 !important; border-top:2px solid var(--border) !important; border-radius:0 !important; }
   .wbs ul.leaf::before { display:none !important; }
   .wbs ul.leaf > li > .wnode { display:inline-block; max-width:260px; white-space:normal; text-align:left; }
+  .wlink { color:inherit; text-decoration:none; cursor:pointer; display:block; }
+  .wnode:hover { border-color:var(--accent); }
+  .wnode.w0:hover { filter:brightness(1.05); }
+  .domain, .task { scroll-margin-top:90px; }
   .dz-open { position:absolute; top:8px; right:8px; z-index:3; background:var(--card2); color:var(--text); border:1px solid var(--border); border-radius:6px; padding:4px 9px; font-size:12px; cursor:pointer; opacity:.85; }
   .dz-open:hover { opacity:1; border-color:var(--accent); }
   #dzOverlay { position:fixed; inset:0; background:rgba(0,0,0,.92); display:none; flex-direction:column; z-index:1000; }
@@ -197,7 +201,8 @@
   };
 
   function makeFlash(){ var c=[]; ECO.domains.forEach(function(d){ d.tasks.forEach(function(t){ c.push({front:t[0], tag:d.id+" · "+d.weight+"%", back:'<ul>'+t[1].map(function(e){return '<li>'+esc(e)+'</li>';}).join('')+'</ul>'}); }); }); return c; }
-  function ecoWbs(){ var b=ECO.domains.map(function(d){ var tasks=d.tasks.map(function(t){ return '<li><span class="wnode">'+esc(t[0])+'</span></li>'; }).join(''); return '<li><span class="wnode wn-'+d.cls+'">'+esc(d.id)+' · '+d.weight+'%</span><ul class="leaf">'+tasks+'</ul></li>'; }).join(''); return '<div class="diagram"><ul class="wbs"><li><span class="wnode w0">PMI PMP ECO — 35 tasks</span><ul>'+b+'</ul></li></ul></div>'; }
+  function ecoWbs(){ var b=ECO.domains.map(function(d){ var tasks=d.tasks.map(function(t,ti){ return '<li><span class="wnode"><a class="wlink" href="#task-'+d.cls+'-'+(ti+1)+'">'+esc(t[0])+'</a></span></li>'; }).join(''); return '<li><span class="wnode wn-'+d.cls+'"><a class="wlink" href="#dom-'+d.cls+'">'+esc(d.id)+' · '+d.weight+'%</a></span><ul class="leaf">'+tasks+'</ul></li>'; }).join(''); return '<div class="diagram"><ul class="wbs"><li><span class="wnode w0"><a class="wlink" href="#content">PMI PMP ECO — 35 tasks</a></span><ul>'+b+'</ul></li></ul></div>'; }
+  function gotoHash(){ var h=location.hash; if(!h||h.length<2) return; var id=decodeURIComponent(h.slice(1)); var el=document.getElementById(id); if(!el) return; if(el.classList.contains("task")) el.classList.add("open"); setTimeout(function(){ try{ el.scrollIntoView({behavior:"smooth",block:"start"}); }catch(e){ el.scrollIntoView(); } },60); }
   function render(){
     document.getElementById("ecoVersion").textContent=ECO.version;
     document.getElementById("weightbar").innerHTML=ECO.domains.map(d=>
@@ -209,11 +214,11 @@
 
     const c=document.getElementById("content"); c.innerHTML="";
     ECO.domains.forEach(function(dm){
-      const sec=document.createElement("div"); sec.className="domain "+dm.cls;
+      const sec=document.createElement("div"); sec.className="domain "+dm.cls; sec.id="dom-"+dm.cls;
       sec.innerHTML='<h2>Domain — '+esc(dm.id)+' <span class="chip">'+dm.weight+'%</span></h2><p class="dnote">'+esc(dm.note)+'</p>';
       dm.tasks.forEach(function(t,i){
         const key=dm.id+"#"+(i+1);
-        const tk=document.createElement("div"); tk.className="task "+dm.cls; tk.dataset.key=key;
+        const tk=document.createElement("div"); tk.className="task "+dm.cls; tk.dataset.key=key; tk.id="task-"+dm.cls+"-"+(i+1);
         tk.innerHTML=
           '<div class="thead">'+
             '<input type="checkbox" '+(studied[key]?"checked":"")+' title="Mark studied" />'+
@@ -255,6 +260,8 @@
     document.getElementById("expandAll").onclick=()=>document.querySelectorAll(".task").forEach(t=>t.classList.add("open"));
     document.getElementById("collapseAll").onclick=()=>document.querySelectorAll(".task").forEach(t=>t.classList.remove("open"));
     document.getElementById("resetStudied").onclick=()=>{ if(confirm("Clear studied checkmarks?")){ studied={}; save(); render(); } };
+    if(!window.__hashHooked){ window.__hashHooked=1; window.addEventListener("hashchange",gotoHash); }
+    setTimeout(gotoHash,120);
   }
   init();
 })();
