@@ -75,6 +75,9 @@
   table.extbl { border-collapse:collapse; width:100%; font-size:12.5px; margin:2px 0; }
   table.extbl th, table.extbl td { border:1px solid var(--border); padding:4px 8px; text-align:left; vertical-align:top; }
   table.extbl th { background:rgba(251,146,60,.14); color:var(--accent); font-weight:600; }
+  .ex.rw { background:rgba(56,189,248,.07); }
+  .ex.rw .exh { color:#38bdf8; }
+  .exsrc { display:block; margin-top:6px; font-size:11px; font-style:italic; opacity:.7; }
   .hidden { display:none !important; }
   .loader { text-align:center; padding:60px 20px; color:var(--muted); }
   footer { text-align:center; color:var(--muted); font-size:12px; padding:22px; }
@@ -213,6 +216,7 @@
                    '<div class="subhead"><h3>'+esc(ss.title)+'</h3>'+(ss.video_time!=null?watchLink(ss.video_time):'')+'</div>'+
                    (lis?'<ul>'+lis+'</ul>':'')+
                    (ss.example?'<div class="ex"><div class="exh">Example / template</div><div class="exb">'+ss.example+'</div></div>':'')+
+                   (ss.realworld?'<div class="ex rw"><div class="exh">Real-world example</div><div class="exb">'+ss.realworld+'</div></div>':'')+
                  '</div>';
         }).join("");
         html+='<section class="sec collapsed" id="'+id+'" data-text="'+esc(sec.title.toLowerCase())+'">'+
